@@ -1,6 +1,6 @@
 # RailsAdminInvite
 Super easy and flexible way to provide an invitation view and logic in
-[rails_admin](sferik/rails_admin).
+[rails_admin](https://github.com/sferik/rails_admin).
 
 ## ATTENTION
 In your Gemfile you must define rails_admin **after** rails_admin_invite.
@@ -41,7 +41,7 @@ In your rails_admin initializer (config/initializers/rails_admin.rb):
   end
 ```
 
-Refer to [rails_admin](sferik/rails_admin) to find out more about configuration.
+Refer to [rails_admin](https://github.com/sferik/rails_admin) to find out more about configuration.
 
 ## Installation
 Add this line to your application's Gemfile:
