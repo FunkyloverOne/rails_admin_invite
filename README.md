@@ -3,7 +3,7 @@ Super easy and flexible way to provide an invitation view and logic in
 [rails_admin](https://github.com/sferik/rails_admin).
 
 ## ATTENTION
-In your Gemfile you must define rails_admin **after** rails_admin_invite.
+In your Gemfile you must define `rails_admin` **after** `rails_admin_invite`.
 
 ## Usage
 In your rails_admin initializer (config/initializers/rails_admin.rb):
@@ -48,7 +48,7 @@ Add this line to your application's Gemfile:
 **Note:** in your Gemfile you must define rails_admin **after** rails_admin_invite.
 
 ```ruby
-gem 'rails_admin_invite'
+gem 'rails_admin_invite', github: 'FunkyloverOne/rails_admin_invite'
 gem 'rails_admin'
 ```
 
@@ -64,6 +64,7 @@ $ gem install rails_admin_invite
 
 ## Contributing
 As usual - fork and make PR's.
+
 The gem is not covered with tests yet. Feel free to provide PR's with tests :D
 
 ## License
