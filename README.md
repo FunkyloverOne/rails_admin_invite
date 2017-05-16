@@ -44,8 +44,9 @@ In your rails_admin initializer (config/initializers/rails_admin.rb):
 Refer to [rails_admin](https://github.com/sferik/rails_admin) to find out more about configuration.
 
 ## Installation
+**Note:** in your Gemfile you must define `rails_admin` **after** `rails_admin_invite`.
+
 Add this line to your application's Gemfile:
-**Note:** in your Gemfile you must define rails_admin **after** rails_admin_invite.
 
 ```ruby
 gem 'rails_admin_invite', github: 'FunkyloverOne/rails_admin_invite'
