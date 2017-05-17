@@ -13,7 +13,7 @@ In your rails_admin initializer (config/initializers/rails_admin.rb):
     # usual actions here
     invite do
       # here goes a set of models which should be "invitable", like this:
-      only User, Admin
+      only [User, Admin]
       # or this:
       only User
     end
