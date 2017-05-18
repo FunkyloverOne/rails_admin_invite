@@ -24,11 +24,9 @@ In your rails_admin initializer (config/initializers/rails_admin.rb):
     invite do
       # set of fields you want here
       # (all included by default, these settings will overwrite the defaults)
-      field :first_name
-      field :last_name
+      field :full_name
       field :email
-      field :password
-      field :password_confirmation
+      field :phone
       # at the following available callbacks you can specify
       # any invitation related logic you want
       before_save [(proc do |user, shared_hash|
