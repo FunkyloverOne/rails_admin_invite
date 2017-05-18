@@ -31,15 +31,18 @@ In your rails_admin initializer (config/initializers/rails_admin.rb):
       field :password_confirmation
       # at the following available callbacks you can specify
       # any invitation related logic you want
-      before_save do |user|
-        user.skip_confirmation!
-      end
-      after_save do |user|
-        UserMailer.invitation_letter(user).deliver
-      end
+      before_save [(proc do |user, shared_hash|
+        shared_hash[:password] = SecureRandom.hex(4)
+        user.password = shared_hash[:password]
+      end)]
+      after_save [(proc do |user, shared_hash|
+        UserMailer.invitation_letter(user, shared_hash[:password]).deliver
+      end)]
     end
   end
 ```
+
+Note that ugly callback syntax... :poop: I hope I will be able to avoid it soon...
 
 Refer to [rails_admin](https://github.com/sferik/rails_admin) to find out more about configuration.
 
