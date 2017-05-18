@@ -52,14 +52,19 @@ module RailsAdmin
                 @object.send("#{name}=", value)
               end
 
-              @abstract_model.config.invite.before_save(@object)
+              shared_hash = {}
+              @abstract_model.config.invite.before_save.try(:first).try(
+                :call, @object, shared_hash
+              )
 
               if @object.save
                 # TODO: find out more about @auditing_adapter
                 # @auditing_adapter && @auditing_adapter.create_object(
                 #   @object, @abstract_model, _current_user
                 # )
-                @abstract_model.config.invite.after_save(@object)
+                @abstract_model.config.invite.after_save.try(:first).try(
+                  :call, @object, shared_hash
+                )
                 respond_to do |format|
                   format.html { redirect_to_on_success }
                   format.js do
