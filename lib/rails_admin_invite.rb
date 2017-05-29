@@ -83,7 +83,7 @@ module RailsAdmin
         end
 
         register_instance_option :link_icon do
-          'fa fa-users'
+          'icon-envelope'
         end
       end
     end
